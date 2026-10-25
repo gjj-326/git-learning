@@ -1,0 +1,718 @@
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/main.c"
+  18              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+  19              		.align	1
+  20              		.global	HAL_GPIO_EXTI_Callback
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	HAL_GPIO_EXTI_Callback:
+  26              	.LVL0:
+  27              	.LFB67:
+   1:Core/Src/main.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/main.c **** /**
+   3:Core/Src/main.c ****   ******************************************************************************
+   4:Core/Src/main.c ****   * @file           : main.c
+   5:Core/Src/main.c ****   * @brief          : Main program body
+   6:Core/Src/main.c ****   ******************************************************************************
+   7:Core/Src/main.c ****   * @attention
+   8:Core/Src/main.c ****   *
+   9:Core/Src/main.c ****   * Copyright (c) 2026 STMicroelectronics.
+  10:Core/Src/main.c ****   * All rights reserved.
+  11:Core/Src/main.c ****   *
+  12:Core/Src/main.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Core/Src/main.c ****   * in the root directory of this software component.
+  14:Core/Src/main.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Core/Src/main.c ****   *
+  16:Core/Src/main.c ****   ******************************************************************************
+  17:Core/Src/main.c ****   */
+  18:Core/Src/main.c **** /* USER CODE END Header */
+  19:Core/Src/main.c **** /* Includes ------------------------------------------------------------------*/
+  20:Core/Src/main.c **** #include "main.h"
+  21:Core/Src/main.c **** #include "gpio.h"
+  22:Core/Src/main.c **** 
+  23:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
+  24:Core/Src/main.c **** /* USER CODE BEGIN Includes */
+  25:Core/Src/main.c **** 
+  26:Core/Src/main.c **** /* USER CODE END Includes */
+  27:Core/Src/main.c **** 
+  28:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
+  29:Core/Src/main.c **** /* USER CODE BEGIN PTD */
+  30:Core/Src/main.c **** 
+  31:Core/Src/main.c **** /* USER CODE END PTD */
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 2
+
+
+  32:Core/Src/main.c **** 
+  33:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
+  34:Core/Src/main.c **** /* USER CODE BEGIN PD */
+  35:Core/Src/main.c **** 
+  36:Core/Src/main.c **** /* USER CODE END PD */
+  37:Core/Src/main.c **** 
+  38:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
+  39:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  40:Core/Src/main.c **** 
+  41:Core/Src/main.c **** /* USER CODE END PM */
+  42:Core/Src/main.c **** 
+  43:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
+  44:Core/Src/main.c **** 
+  45:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  46:Core/Src/main.c **** 
+  47:Core/Src/main.c **** /* USER CODE END PV */
+  48:Core/Src/main.c **** 
+  49:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
+  50:Core/Src/main.c **** void SystemClock_Config(void);
+  51:Core/Src/main.c **** /* USER CODE BEGIN PFP */
+  52:Core/Src/main.c **** 
+  53:Core/Src/main.c **** /* USER CODE END PFP */
+  54:Core/Src/main.c **** 
+  55:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
+  56:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  57:Core/Src/main.c **** uint8_t key_trigger=0;
+  58:Core/Src/main.c **** /* USER CODE END 0 */
+  59:Core/Src/main.c **** 
+  60:Core/Src/main.c **** /**
+  61:Core/Src/main.c ****   * @brief  The application entry point.
+  62:Core/Src/main.c ****   * @retval int
+  63:Core/Src/main.c ****   */
+  64:Core/Src/main.c **** int main(void)
+  65:Core/Src/main.c **** {
+  66:Core/Src/main.c **** 
+  67:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  68:Core/Src/main.c **** 
+  69:Core/Src/main.c ****   /* USER CODE END 1 */
+  70:Core/Src/main.c **** 
+  71:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
+  72:Core/Src/main.c **** 
+  73:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  74:Core/Src/main.c ****   HAL_Init();
+  75:Core/Src/main.c **** 
+  76:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  77:Core/Src/main.c **** 
+  78:Core/Src/main.c ****   /* USER CODE END Init */
+  79:Core/Src/main.c **** 
+  80:Core/Src/main.c ****   /* Configure the system clock */
+  81:Core/Src/main.c ****   SystemClock_Config();
+  82:Core/Src/main.c **** 
+  83:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  84:Core/Src/main.c **** 
+  85:Core/Src/main.c ****   /* USER CODE END SysInit */
+  86:Core/Src/main.c **** 
+  87:Core/Src/main.c ****   /* Initialize all configured peripherals */
+  88:Core/Src/main.c ****   MX_GPIO_Init();
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 3
+
+
+  89:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+  90:Core/Src/main.c **** 
+  91:Core/Src/main.c ****   /* USER CODE END 2 */
+  92:Core/Src/main.c **** 
+  93:Core/Src/main.c ****   /* Infinite loop */
+  94:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+  95:Core/Src/main.c ****   while (1)
+  96:Core/Src/main.c ****   {
+  97:Core/Src/main.c ****     /* USER CODE END WHILE */
+  98:Core/Src/main.c **** 
+  99:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 100:Core/Src/main.c ****     if(key_trigger==1)
+ 101:Core/Src/main.c ****     {
+ 102:Core/Src/main.c ****       HAL_Delay(20);
+ 103:Core/Src/main.c ****       if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_9)==GPIO_PIN_RESET)
+ 104:Core/Src/main.c ****       {
+ 105:Core/Src/main.c ****         HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+ 106:Core/Src/main.c ****       }
+ 107:Core/Src/main.c ****       key_trigger=0;
+ 108:Core/Src/main.c ****     }
+ 109:Core/Src/main.c ****   }
+ 110:Core/Src/main.c ****   /* USER CODE END 3 */
+ 111:Core/Src/main.c **** }
+ 112:Core/Src/main.c **** 
+ 113:Core/Src/main.c **** /**
+ 114:Core/Src/main.c ****   * @brief System Clock Configuration
+ 115:Core/Src/main.c ****   * @retval None
+ 116:Core/Src/main.c ****   */
+ 117:Core/Src/main.c **** void SystemClock_Config(void)
+ 118:Core/Src/main.c **** {
+ 119:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 120:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 121:Core/Src/main.c **** 
+ 122:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 123:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
+ 124:Core/Src/main.c ****   */
+ 125:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+ 126:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 127:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 128:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 129:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 130:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 131:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 132:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 133:Core/Src/main.c ****   {
+ 134:Core/Src/main.c ****     Error_Handler();
+ 135:Core/Src/main.c ****   }
+ 136:Core/Src/main.c **** 
+ 137:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 138:Core/Src/main.c ****   */
+ 139:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 140:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 141:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 142:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 143:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 144:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 145:Core/Src/main.c **** 
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 4
+
+
+ 146:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+ 147:Core/Src/main.c ****   {
+ 148:Core/Src/main.c ****     Error_Handler();
+ 149:Core/Src/main.c ****   }
+ 150:Core/Src/main.c **** }
+ 151:Core/Src/main.c **** 
+ 152:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 153:Core/Src/main.c **** void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+ 154:Core/Src/main.c **** {
+  28              		.loc 1 154 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 155:Core/Src/main.c ****   if(GPIO_Pin==GPIO_PIN_9)
+  33              		.loc 1 155 3 view .LVU1
+  34              		.loc 1 155 5 is_stmt 0 view .LVU2
+  35 0000 B0F5007F 		cmp	r0, #512
+  36 0004 00D0     		beq	.L3
+  37              	.L1:
+ 156:Core/Src/main.c ****   {
+ 157:Core/Src/main.c ****     key_trigger=1; 
+ 158:Core/Src/main.c ****   }
+ 159:Core/Src/main.c **** }
+  38              		.loc 1 159 1 view .LVU3
+  39 0006 7047     		bx	lr
+  40              	.L3:
+ 157:Core/Src/main.c ****   }
+  41              		.loc 1 157 5 is_stmt 1 view .LVU4
+ 157:Core/Src/main.c ****   }
+  42              		.loc 1 157 16 is_stmt 0 view .LVU5
+  43 0008 014B     		ldr	r3, .L4
+  44 000a 0122     		movs	r2, #1
+  45 000c 1A70     		strb	r2, [r3]
+  46              		.loc 1 159 1 view .LVU6
+  47 000e FAE7     		b	.L1
+  48              	.L5:
+  49              		.align	2
+  50              	.L4:
+  51 0010 00000000 		.word	key_trigger
+  52              		.cfi_endproc
+  53              	.LFE67:
+  55              		.section	.text.Error_Handler,"ax",%progbits
+  56              		.align	1
+  57              		.global	Error_Handler
+  58              		.syntax unified
+  59              		.thumb
+  60              		.thumb_func
+  62              	Error_Handler:
+  63              	.LFB68:
+ 160:Core/Src/main.c **** /* USER CODE END 4 */
+ 161:Core/Src/main.c **** 
+ 162:Core/Src/main.c **** /**
+ 163:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 164:Core/Src/main.c ****   * @retval None
+ 165:Core/Src/main.c ****   */
+ 166:Core/Src/main.c **** void Error_Handler(void)
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 5
+
+
+ 167:Core/Src/main.c **** {
+  64              		.loc 1 167 1 is_stmt 1 view -0
+  65              		.cfi_startproc
+  66              		@ Volatile: function does not return.
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+ 168:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 169:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 170:Core/Src/main.c ****   __disable_irq();
+  70              		.loc 1 170 3 view .LVU8
+  71              	.LBB4:
+  72              	.LBI4:
+  73              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.0.4
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     09. April 2018
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
+   8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 6
+
+
+  44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 7
+
+
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+  74              		.loc 2 140 27 view .LVU9
+  75              	.LBB5:
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+  76              		.loc 2 142 3 view .LVU10
+  77              		.syntax unified
+  78              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  79 0000 72B6     		cpsid i
+  80              	@ 0 "" 2
+  81              		.thumb
+  82              		.syntax unified
+  83              	.L7:
+  84              	.LBE5:
+  85              	.LBE4:
+ 171:Core/Src/main.c ****   while (1)
+  86              		.loc 1 171 3 view .LVU11
+ 172:Core/Src/main.c ****   {
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 8
+
+
+ 173:Core/Src/main.c ****   }
+  87              		.loc 1 173 3 view .LVU12
+ 171:Core/Src/main.c ****   while (1)
+  88              		.loc 1 171 9 view .LVU13
+  89 0002 FEE7     		b	.L7
+  90              		.cfi_endproc
+  91              	.LFE68:
+  93              		.section	.text.SystemClock_Config,"ax",%progbits
+  94              		.align	1
+  95              		.global	SystemClock_Config
+  96              		.syntax unified
+  97              		.thumb
+  98              		.thumb_func
+ 100              	SystemClock_Config:
+ 101              	.LFB66:
+ 118:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 102              		.loc 1 118 1 view -0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 64
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106 0000 10B5     		push	{r4, lr}
+ 107              	.LCFI0:
+ 108              		.cfi_def_cfa_offset 8
+ 109              		.cfi_offset 4, -8
+ 110              		.cfi_offset 14, -4
+ 111 0002 90B0     		sub	sp, sp, #64
+ 112              	.LCFI1:
+ 113              		.cfi_def_cfa_offset 72
+ 119:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 114              		.loc 1 119 3 view .LVU15
+ 119:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 115              		.loc 1 119 22 is_stmt 0 view .LVU16
+ 116 0004 06AC     		add	r4, sp, #24
+ 117 0006 2822     		movs	r2, #40
+ 118 0008 0021     		movs	r1, #0
+ 119 000a 2046     		mov	r0, r4
+ 120 000c FFF7FEFF 		bl	memset
+ 121              	.LVL1:
+ 120:Core/Src/main.c **** 
+ 122              		.loc 1 120 3 is_stmt 1 view .LVU17
+ 120:Core/Src/main.c **** 
+ 123              		.loc 1 120 22 is_stmt 0 view .LVU18
+ 124 0010 0023     		movs	r3, #0
+ 125 0012 0193     		str	r3, [sp, #4]
+ 126 0014 0293     		str	r3, [sp, #8]
+ 127 0016 0393     		str	r3, [sp, #12]
+ 128 0018 0493     		str	r3, [sp, #16]
+ 129 001a 0593     		str	r3, [sp, #20]
+ 125:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 130              		.loc 1 125 3 is_stmt 1 view .LVU19
+ 125:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 131              		.loc 1 125 36 is_stmt 0 view .LVU20
+ 132 001c 0122     		movs	r2, #1
+ 133 001e 0692     		str	r2, [sp, #24]
+ 126:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 134              		.loc 1 126 3 is_stmt 1 view .LVU21
+ 126:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 9
+
+
+ 135              		.loc 1 126 30 is_stmt 0 view .LVU22
+ 136 0020 4FF48033 		mov	r3, #65536
+ 137 0024 0793     		str	r3, [sp, #28]
+ 127:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 138              		.loc 1 127 3 is_stmt 1 view .LVU23
+ 128:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 139              		.loc 1 128 3 view .LVU24
+ 128:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 140              		.loc 1 128 30 is_stmt 0 view .LVU25
+ 141 0026 0A92     		str	r2, [sp, #40]
+ 129:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 142              		.loc 1 129 3 is_stmt 1 view .LVU26
+ 129:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 143              		.loc 1 129 34 is_stmt 0 view .LVU27
+ 144 0028 0222     		movs	r2, #2
+ 145 002a 0D92     		str	r2, [sp, #52]
+ 130:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 146              		.loc 1 130 3 is_stmt 1 view .LVU28
+ 130:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 147              		.loc 1 130 35 is_stmt 0 view .LVU29
+ 148 002c 0E93     		str	r3, [sp, #56]
+ 131:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 149              		.loc 1 131 3 is_stmt 1 view .LVU30
+ 131:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 150              		.loc 1 131 32 is_stmt 0 view .LVU31
+ 151 002e 4FF4E013 		mov	r3, #1835008
+ 152 0032 0F93     		str	r3, [sp, #60]
+ 132:Core/Src/main.c ****   {
+ 153              		.loc 1 132 3 is_stmt 1 view .LVU32
+ 132:Core/Src/main.c ****   {
+ 154              		.loc 1 132 7 is_stmt 0 view .LVU33
+ 155 0034 2046     		mov	r0, r4
+ 156 0036 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 157              	.LVL2:
+ 132:Core/Src/main.c ****   {
+ 158              		.loc 1 132 6 discriminator 1 view .LVU34
+ 159 003a 78B9     		cbnz	r0, .L12
+ 139:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 160              		.loc 1 139 3 is_stmt 1 view .LVU35
+ 139:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 161              		.loc 1 139 31 is_stmt 0 view .LVU36
+ 162 003c 0F23     		movs	r3, #15
+ 163 003e 0193     		str	r3, [sp, #4]
+ 141:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 164              		.loc 1 141 3 is_stmt 1 view .LVU37
+ 141:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 165              		.loc 1 141 34 is_stmt 0 view .LVU38
+ 166 0040 0221     		movs	r1, #2
+ 167 0042 0291     		str	r1, [sp, #8]
+ 142:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 168              		.loc 1 142 3 is_stmt 1 view .LVU39
+ 142:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 169              		.loc 1 142 35 is_stmt 0 view .LVU40
+ 170 0044 0023     		movs	r3, #0
+ 171 0046 0393     		str	r3, [sp, #12]
+ 143:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 172              		.loc 1 143 3 is_stmt 1 view .LVU41
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 10
+
+
+ 143:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 173              		.loc 1 143 36 is_stmt 0 view .LVU42
+ 174 0048 4FF48062 		mov	r2, #1024
+ 175 004c 0492     		str	r2, [sp, #16]
+ 144:Core/Src/main.c **** 
+ 176              		.loc 1 144 3 is_stmt 1 view .LVU43
+ 144:Core/Src/main.c **** 
+ 177              		.loc 1 144 36 is_stmt 0 view .LVU44
+ 178 004e 0593     		str	r3, [sp, #20]
+ 146:Core/Src/main.c ****   {
+ 179              		.loc 1 146 3 is_stmt 1 view .LVU45
+ 146:Core/Src/main.c ****   {
+ 180              		.loc 1 146 7 is_stmt 0 view .LVU46
+ 181 0050 01A8     		add	r0, sp, #4
+ 182 0052 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 183              	.LVL3:
+ 146:Core/Src/main.c ****   {
+ 184              		.loc 1 146 6 discriminator 1 view .LVU47
+ 185 0056 18B9     		cbnz	r0, .L13
+ 150:Core/Src/main.c **** 
+ 186              		.loc 1 150 1 view .LVU48
+ 187 0058 10B0     		add	sp, sp, #64
+ 188              	.LCFI2:
+ 189              		.cfi_remember_state
+ 190              		.cfi_def_cfa_offset 8
+ 191              		@ sp needed
+ 192 005a 10BD     		pop	{r4, pc}
+ 193              	.L12:
+ 194              	.LCFI3:
+ 195              		.cfi_restore_state
+ 134:Core/Src/main.c ****   }
+ 196              		.loc 1 134 5 is_stmt 1 view .LVU49
+ 197 005c FFF7FEFF 		bl	Error_Handler
+ 198              	.LVL4:
+ 199              	.L13:
+ 148:Core/Src/main.c ****   }
+ 200              		.loc 1 148 5 view .LVU50
+ 201 0060 FFF7FEFF 		bl	Error_Handler
+ 202              	.LVL5:
+ 203              		.cfi_endproc
+ 204              	.LFE66:
+ 206              		.section	.text.main,"ax",%progbits
+ 207              		.align	1
+ 208              		.global	main
+ 209              		.syntax unified
+ 210              		.thumb
+ 211              		.thumb_func
+ 213              	main:
+ 214              	.LFB65:
+  65:Core/Src/main.c **** 
+ 215              		.loc 1 65 1 view -0
+ 216              		.cfi_startproc
+ 217              		@ Volatile: function does not return.
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220 0000 08B5     		push	{r3, lr}
+ 221              	.LCFI4:
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 11
+
+
+ 222              		.cfi_def_cfa_offset 8
+ 223              		.cfi_offset 3, -8
+ 224              		.cfi_offset 14, -4
+  74:Core/Src/main.c **** 
+ 225              		.loc 1 74 3 view .LVU52
+ 226 0002 FFF7FEFF 		bl	HAL_Init
+ 227              	.LVL6:
+  81:Core/Src/main.c **** 
+ 228              		.loc 1 81 3 view .LVU53
+ 229 0006 FFF7FEFF 		bl	SystemClock_Config
+ 230              	.LVL7:
+  88:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 231              		.loc 1 88 3 view .LVU54
+ 232 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 233              	.LVL8:
+ 234 000e 02E0     		b	.L15
+ 235              	.L16:
+ 107:Core/Src/main.c ****     }
+ 236              		.loc 1 107 7 view .LVU55
+ 107:Core/Src/main.c ****     }
+ 237              		.loc 1 107 18 is_stmt 0 view .LVU56
+ 238 0010 0C4B     		ldr	r3, .L19
+ 239 0012 0022     		movs	r2, #0
+ 240 0014 1A70     		strb	r2, [r3]
+ 241              	.L15:
+  95:Core/Src/main.c ****   {
+ 242              		.loc 1 95 3 is_stmt 1 view .LVU57
+ 100:Core/Src/main.c ****     {
+ 243              		.loc 1 100 5 view .LVU58
+ 100:Core/Src/main.c ****     {
+ 244              		.loc 1 100 19 is_stmt 0 view .LVU59
+ 245 0016 0B4B     		ldr	r3, .L19
+ 246 0018 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 100:Core/Src/main.c ****     {
+ 247              		.loc 1 100 7 view .LVU60
+ 248 001a 012B     		cmp	r3, #1
+ 249 001c FBD1     		bne	.L15
+ 102:Core/Src/main.c ****       if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_9)==GPIO_PIN_RESET)
+ 250              		.loc 1 102 7 is_stmt 1 view .LVU61
+ 251 001e 1420     		movs	r0, #20
+ 252 0020 FFF7FEFF 		bl	HAL_Delay
+ 253              	.LVL9:
+ 103:Core/Src/main.c ****       {
+ 254              		.loc 1 103 7 view .LVU62
+ 103:Core/Src/main.c ****       {
+ 255              		.loc 1 103 10 is_stmt 0 view .LVU63
+ 256 0024 4FF40071 		mov	r1, #512
+ 257 0028 0748     		ldr	r0, .L19+4
+ 258 002a FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 259              	.LVL10:
+ 103:Core/Src/main.c ****       {
+ 260              		.loc 1 103 9 discriminator 1 view .LVU64
+ 261 002e 0028     		cmp	r0, #0
+ 262 0030 EED1     		bne	.L16
+ 105:Core/Src/main.c ****       }
+ 263              		.loc 1 105 9 is_stmt 1 view .LVU65
+ 264 0032 4FF40051 		mov	r1, #8192
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 12
+
+
+ 265 0036 00F18040 		add	r0, r0, #1073741824
+ 266 003a 00F58830 		add	r0, r0, #69632
+ 267 003e FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 268              	.LVL11:
+ 269 0042 E5E7     		b	.L16
+ 270              	.L20:
+ 271              		.align	2
+ 272              	.L19:
+ 273 0044 00000000 		.word	key_trigger
+ 274 0048 000C0140 		.word	1073810432
+ 275              		.cfi_endproc
+ 276              	.LFE65:
+ 278              		.global	key_trigger
+ 279              		.section	.bss.key_trigger,"aw",%nobits
+ 282              	key_trigger:
+ 283 0000 00       		.space	1
+ 284              		.text
+ 285              	.Letext0:
+ 286              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 287              		.file 4 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 288              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 289              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 290              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 291              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 292              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 293              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 294              		.file 11 "Core/Inc/gpio.h"
+ 295              		.file 12 "<built-in>"
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:19     .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:25     .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:51     .text.HAL_GPIO_EXTI_Callback:00000010 $d
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:282    .bss.key_trigger:00000000 key_trigger
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:56     .text.Error_Handler:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:62     .text.Error_Handler:00000000 Error_Handler
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:94     .text.SystemClock_Config:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:100    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:207    .text.main:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:213    .text.main:00000000 main
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:273    .text.main:00000044 $d
+C:\Users\Lenovo\AppData\Local\Temp\ccKbeysv.s:283    .bss.key_trigger:00000000 $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_Init
+MX_GPIO_Init
+HAL_Delay
+HAL_GPIO_ReadPin
+HAL_GPIO_TogglePin
