@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   30:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   31:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   32:Core/Src/main.c **** 
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 2
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 2
 
 
   33:Core/Src/main.c **** /* USER CODE END PTD */
@@ -87,127 +87,139 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   56:Core/Src/main.c **** 
   57:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
   58:Core/Src/main.c **** /* USER CODE BEGIN 0 */
-  59:Core/Src/main.c **** 
-  60:Core/Src/main.c **** /* USER CODE END 0 */
-  61:Core/Src/main.c **** 
-  62:Core/Src/main.c **** /**
-  63:Core/Src/main.c ****   * @brief  The application entry point.
-  64:Core/Src/main.c ****   * @retval int
-  65:Core/Src/main.c ****   */
-  66:Core/Src/main.c **** int main(void)
-  67:Core/Src/main.c **** {
-  68:Core/Src/main.c **** 
-  69:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
-  70:Core/Src/main.c **** 
-  71:Core/Src/main.c ****   /* USER CODE END 1 */
-  72:Core/Src/main.c **** 
-  73:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
-  74:Core/Src/main.c **** 
-  75:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  76:Core/Src/main.c ****   HAL_Init();
-  77:Core/Src/main.c **** 
-  78:Core/Src/main.c ****   /* USER CODE BEGIN Init */
-  79:Core/Src/main.c **** 
-  80:Core/Src/main.c ****   /* USER CODE END Init */
-  81:Core/Src/main.c **** 
-  82:Core/Src/main.c ****   /* Configure the system clock */
-  83:Core/Src/main.c ****   SystemClock_Config();
-  84:Core/Src/main.c **** 
-  85:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
-  86:Core/Src/main.c **** 
-  87:Core/Src/main.c ****   /* USER CODE END SysInit */
-  88:Core/Src/main.c **** 
-  89:Core/Src/main.c ****   /* Initialize all configured peripherals */
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 3
+  59:Core/Src/main.c **** uint16_t adc_x;
+  60:Core/Src/main.c **** uint16_t ccr_val;
+  61:Core/Src/main.c **** /* USER CODE END 0 */
+  62:Core/Src/main.c **** 
+  63:Core/Src/main.c **** /**
+  64:Core/Src/main.c ****   * @brief  The application entry point.
+  65:Core/Src/main.c ****   * @retval int
+  66:Core/Src/main.c ****   */
+  67:Core/Src/main.c **** int main(void)
+  68:Core/Src/main.c **** {
+  69:Core/Src/main.c **** 
+  70:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  71:Core/Src/main.c **** 
+  72:Core/Src/main.c ****   /* USER CODE END 1 */
+  73:Core/Src/main.c **** 
+  74:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
+  75:Core/Src/main.c **** 
+  76:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  77:Core/Src/main.c ****   HAL_Init();
+  78:Core/Src/main.c **** 
+  79:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  80:Core/Src/main.c **** 
+  81:Core/Src/main.c ****   /* USER CODE END Init */
+  82:Core/Src/main.c **** 
+  83:Core/Src/main.c ****   /* Configure the system clock */
+  84:Core/Src/main.c ****   SystemClock_Config();
+  85:Core/Src/main.c **** 
+  86:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  87:Core/Src/main.c **** 
+  88:Core/Src/main.c ****   /* USER CODE END SysInit */
+  89:Core/Src/main.c **** 
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 3
 
 
-  90:Core/Src/main.c ****   MX_GPIO_Init();
-  91:Core/Src/main.c ****   MX_ADC1_Init();
-  92:Core/Src/main.c ****   MX_TIM3_Init();
-  93:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
-  94:Core/Src/main.c **** 
-  95:Core/Src/main.c ****   /* USER CODE END 2 */
-  96:Core/Src/main.c **** 
-  97:Core/Src/main.c ****   /* Infinite loop */
-  98:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
-  99:Core/Src/main.c ****   while (1)
- 100:Core/Src/main.c ****   {
- 101:Core/Src/main.c ****     /* USER CODE END WHILE */
- 102:Core/Src/main.c **** 
- 103:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
- 104:Core/Src/main.c ****   }
- 105:Core/Src/main.c ****   /* USER CODE END 3 */
- 106:Core/Src/main.c **** }
- 107:Core/Src/main.c **** 
- 108:Core/Src/main.c **** /**
- 109:Core/Src/main.c ****   * @brief System Clock Configuration
- 110:Core/Src/main.c ****   * @retval None
- 111:Core/Src/main.c ****   */
- 112:Core/Src/main.c **** void SystemClock_Config(void)
- 113:Core/Src/main.c **** {
- 114:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 115:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 116:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
- 117:Core/Src/main.c **** 
- 118:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
- 119:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
- 120:Core/Src/main.c ****   */
- 121:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
- 122:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 123:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
- 124:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 125:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 126:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 127:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
- 128:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 129:Core/Src/main.c ****   {
- 130:Core/Src/main.c ****     Error_Handler();
- 131:Core/Src/main.c ****   }
- 132:Core/Src/main.c **** 
- 133:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
- 134:Core/Src/main.c ****   */
- 135:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 136:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 137:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 138:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 139:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 140:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 141:Core/Src/main.c **** 
- 142:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
- 143:Core/Src/main.c ****   {
- 144:Core/Src/main.c ****     Error_Handler();
- 145:Core/Src/main.c ****   }
- 146:Core/Src/main.c ****   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 4
+  90:Core/Src/main.c ****   /* Initialize all configured peripherals */
+  91:Core/Src/main.c ****   MX_GPIO_Init();
+  92:Core/Src/main.c ****   MX_ADC1_Init();
+  93:Core/Src/main.c ****   MX_TIM3_Init();
+  94:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+  95:Core/Src/main.c **** HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
+  96:Core/Src/main.c ****   /* USER CODE END 2 */
+  97:Core/Src/main.c **** 
+  98:Core/Src/main.c ****   /* Infinite loop */
+  99:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+ 100:Core/Src/main.c ****   while (1)
+ 101:Core/Src/main.c ****   {
+ 102:Core/Src/main.c ****     /* USER CODE END WHILE */
+ 103:Core/Src/main.c **** 
+ 104:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 105:Core/Src/main.c ****     if(HAL_ADC_Start(&hadc1)==HAL_OK)
+ 106:Core/Src/main.c ****     {
+ 107:Core/Src/main.c ****       if(HAL_ADC_PollForConversion(&hadc1,1)==HAL_OK)
+ 108:Core/Src/main.c ****       {
+ 109:Core/Src/main.c ****         adc_x=HAL_ADC_GetValue(&hadc1);
+ 110:Core/Src/main.c ****         ccr_val=50U+(uint16_t)((200UL*adc_x)/4095U);
+ 111:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 112:Core/Src/main.c ****       }
+ 113:Core/Src/main.c ****       HAL_ADC_Stop(&hadc1);
+ 114:Core/Src/main.c ****     }
+ 115:Core/Src/main.c ****     HAL_Delay(20);
+ 116:Core/Src/main.c ****   }
+ 117:Core/Src/main.c ****   /* USER CODE END 3 */
+ 118:Core/Src/main.c **** }
+ 119:Core/Src/main.c **** 
+ 120:Core/Src/main.c **** /**
+ 121:Core/Src/main.c ****   * @brief System Clock Configuration
+ 122:Core/Src/main.c ****   * @retval None
+ 123:Core/Src/main.c ****   */
+ 124:Core/Src/main.c **** void SystemClock_Config(void)
+ 125:Core/Src/main.c **** {
+ 126:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 127:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 128:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+ 129:Core/Src/main.c **** 
+ 130:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 131:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
+ 132:Core/Src/main.c ****   */
+ 133:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+ 134:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 135:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 136:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 137:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 138:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 139:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 140:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 141:Core/Src/main.c ****   {
+ 142:Core/Src/main.c ****     Error_Handler();
+ 143:Core/Src/main.c ****   }
+ 144:Core/Src/main.c **** 
+ 145:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 146:Core/Src/main.c ****   */
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 4
 
 
- 147:Core/Src/main.c ****   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
- 148:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
- 149:Core/Src/main.c ****   {
- 150:Core/Src/main.c ****     Error_Handler();
- 151:Core/Src/main.c ****   }
- 152:Core/Src/main.c **** }
+ 147:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 148:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 149:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 150:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 151:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 152:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
  153:Core/Src/main.c **** 
- 154:Core/Src/main.c **** /* USER CODE BEGIN 4 */
- 155:Core/Src/main.c **** 
- 156:Core/Src/main.c **** /* USER CODE END 4 */
- 157:Core/Src/main.c **** 
- 158:Core/Src/main.c **** /**
- 159:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
- 160:Core/Src/main.c ****   * @retval None
- 161:Core/Src/main.c ****   */
- 162:Core/Src/main.c **** void Error_Handler(void)
- 163:Core/Src/main.c **** {
-  27              		.loc 1 163 1 view -0
+ 154:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+ 155:Core/Src/main.c ****   {
+ 156:Core/Src/main.c ****     Error_Handler();
+ 157:Core/Src/main.c ****   }
+ 158:Core/Src/main.c ****   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+ 159:Core/Src/main.c ****   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+ 160:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 161:Core/Src/main.c ****   {
+ 162:Core/Src/main.c ****     Error_Handler();
+ 163:Core/Src/main.c ****   }
+ 164:Core/Src/main.c **** }
+ 165:Core/Src/main.c **** 
+ 166:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 167:Core/Src/main.c **** 
+ 168:Core/Src/main.c **** /* USER CODE END 4 */
+ 169:Core/Src/main.c **** 
+ 170:Core/Src/main.c **** /**
+ 171:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 172:Core/Src/main.c ****   * @retval None
+ 173:Core/Src/main.c ****   */
+ 174:Core/Src/main.c **** void Error_Handler(void)
+ 175:Core/Src/main.c **** {
+  27              		.loc 1 175 1 view -0
   28              		.cfi_startproc
   29              		@ Volatile: function does not return.
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
- 164:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
- 165:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
- 166:Core/Src/main.c ****   __disable_irq();
-  33              		.loc 1 166 3 view .LVU1
+ 176:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 177:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 178:Core/Src/main.c ****   __disable_irq();
+  33              		.loc 1 178 3 view .LVU1
   34              	.LBB4:
   35              	.LBI4:
   36              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
@@ -226,6 +238,9 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
   14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
   15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 5
+
+
   16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
   17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
@@ -238,9 +253,6 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
   26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
   27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 5
-
-
   28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
   29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
   30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
@@ -286,6 +298,9 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
   71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 6
+
+
   73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
   75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -298,9 +313,6 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
   83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 6
-
-
   85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
   87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
@@ -346,6 +358,9 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
  127:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
  128:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  129:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 7
+
+
  130:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  131:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
  132:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -358,9 +373,6 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
  139:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  140:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
   37              		.loc 2 140 27 view .LVU2
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 7
-
-
   38              	.LBB5:
  141:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  142:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
@@ -374,13 +386,13 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   46              	.L2:
   47              	.LBE5:
   48              	.LBE4:
- 167:Core/Src/main.c ****   while (1)
-  49              		.loc 1 167 3 view .LVU4
- 168:Core/Src/main.c ****   {
- 169:Core/Src/main.c ****   }
-  50              		.loc 1 169 3 view .LVU5
- 167:Core/Src/main.c ****   while (1)
-  51              		.loc 1 167 9 view .LVU6
+ 179:Core/Src/main.c ****   while (1)
+  49              		.loc 1 179 3 view .LVU4
+ 180:Core/Src/main.c ****   {
+ 181:Core/Src/main.c ****   }
+  50              		.loc 1 181 3 view .LVU5
+ 179:Core/Src/main.c ****   while (1)
+  51              		.loc 1 179 9 view .LVU6
   52 0002 FEE7     		b	.L2
   53              		.cfi_endproc
   54              	.LFE67:
@@ -392,8 +404,8 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   61              		.thumb_func
   63              	SystemClock_Config:
   64              	.LFB66:
- 113:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  65              		.loc 1 113 1 view -0
+ 125:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  65              		.loc 1 125 1 view -0
   66              		.cfi_startproc
   67              		@ args = 0, pretend = 0, frame = 80
   68              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -405,152 +417,152 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
   74 0002 94B0     		sub	sp, sp, #80
   75              	.LCFI1:
   76              		.cfi_def_cfa_offset 88
- 114:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  77              		.loc 1 114 3 view .LVU8
- 114:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  78              		.loc 1 114 22 is_stmt 0 view .LVU9
+ 126:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 8
+
+
+  77              		.loc 1 126 3 view .LVU8
+ 126:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  78              		.loc 1 126 22 is_stmt 0 view .LVU9
   79 0004 0AAC     		add	r4, sp, #40
   80 0006 2822     		movs	r2, #40
   81 0008 0021     		movs	r1, #0
   82 000a 2046     		mov	r0, r4
   83 000c FFF7FEFF 		bl	memset
   84              	.LVL0:
- 115:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-  85              		.loc 1 115 3 is_stmt 1 view .LVU10
- 115:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 8
-
-
-  86              		.loc 1 115 22 is_stmt 0 view .LVU11
+ 127:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+  85              		.loc 1 127 3 is_stmt 1 view .LVU10
+ 127:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+  86              		.loc 1 127 22 is_stmt 0 view .LVU11
   87 0010 0023     		movs	r3, #0
   88 0012 0593     		str	r3, [sp, #20]
   89 0014 0693     		str	r3, [sp, #24]
   90 0016 0793     		str	r3, [sp, #28]
   91 0018 0893     		str	r3, [sp, #32]
   92 001a 0993     		str	r3, [sp, #36]
- 116:Core/Src/main.c **** 
-  93              		.loc 1 116 3 is_stmt 1 view .LVU12
- 116:Core/Src/main.c **** 
-  94              		.loc 1 116 28 is_stmt 0 view .LVU13
+ 128:Core/Src/main.c **** 
+  93              		.loc 1 128 3 is_stmt 1 view .LVU12
+ 128:Core/Src/main.c **** 
+  94              		.loc 1 128 28 is_stmt 0 view .LVU13
   95 001c 0193     		str	r3, [sp, #4]
   96 001e 0293     		str	r3, [sp, #8]
   97 0020 0393     		str	r3, [sp, #12]
   98 0022 0493     		str	r3, [sp, #16]
- 121:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  99              		.loc 1 121 3 is_stmt 1 view .LVU14
- 121:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 100              		.loc 1 121 36 is_stmt 0 view .LVU15
+ 133:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  99              		.loc 1 133 3 is_stmt 1 view .LVU14
+ 133:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 100              		.loc 1 133 36 is_stmt 0 view .LVU15
  101 0024 0122     		movs	r2, #1
  102 0026 0A92     		str	r2, [sp, #40]
- 122:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
- 103              		.loc 1 122 3 is_stmt 1 view .LVU16
- 122:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
- 104              		.loc 1 122 30 is_stmt 0 view .LVU17
+ 134:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 103              		.loc 1 134 3 is_stmt 1 view .LVU16
+ 134:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+ 104              		.loc 1 134 30 is_stmt 0 view .LVU17
  105 0028 4FF48033 		mov	r3, #65536
  106 002c 0B93     		str	r3, [sp, #44]
- 123:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 107              		.loc 1 123 3 is_stmt 1 view .LVU18
- 124:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 108              		.loc 1 124 3 view .LVU19
- 124:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 109              		.loc 1 124 30 is_stmt 0 view .LVU20
+ 135:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 107              		.loc 1 135 3 is_stmt 1 view .LVU18
+ 136:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 108              		.loc 1 136 3 view .LVU19
+ 136:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 109              		.loc 1 136 30 is_stmt 0 view .LVU20
  110 002e 0E92     		str	r2, [sp, #56]
- 125:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 111              		.loc 1 125 3 is_stmt 1 view .LVU21
- 125:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 112              		.loc 1 125 34 is_stmt 0 view .LVU22
+ 137:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 111              		.loc 1 137 3 is_stmt 1 view .LVU21
+ 137:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 112              		.loc 1 137 34 is_stmt 0 view .LVU22
  113 0030 0222     		movs	r2, #2
  114 0032 1192     		str	r2, [sp, #68]
- 126:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
- 115              		.loc 1 126 3 is_stmt 1 view .LVU23
- 126:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
- 116              		.loc 1 126 35 is_stmt 0 view .LVU24
+ 138:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 115              		.loc 1 138 3 is_stmt 1 view .LVU23
+ 138:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+ 116              		.loc 1 138 35 is_stmt 0 view .LVU24
  117 0034 1293     		str	r3, [sp, #72]
- 127:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 118              		.loc 1 127 3 is_stmt 1 view .LVU25
- 127:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 119              		.loc 1 127 32 is_stmt 0 view .LVU26
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 9
+
+
+ 139:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 118              		.loc 1 139 3 is_stmt 1 view .LVU25
+ 139:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 119              		.loc 1 139 32 is_stmt 0 view .LVU26
  120 0036 4FF4E013 		mov	r3, #1835008
  121 003a 1393     		str	r3, [sp, #76]
- 128:Core/Src/main.c ****   {
- 122              		.loc 1 128 3 is_stmt 1 view .LVU27
- 128:Core/Src/main.c ****   {
- 123              		.loc 1 128 7 is_stmt 0 view .LVU28
+ 140:Core/Src/main.c ****   {
+ 122              		.loc 1 140 3 is_stmt 1 view .LVU27
+ 140:Core/Src/main.c ****   {
+ 123              		.loc 1 140 7 is_stmt 0 view .LVU28
  124 003c 2046     		mov	r0, r4
  125 003e FFF7FEFF 		bl	HAL_RCC_OscConfig
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 9
-
-
  126              	.LVL1:
- 128:Core/Src/main.c ****   {
- 127              		.loc 1 128 6 discriminator 1 view .LVU29
+ 140:Core/Src/main.c ****   {
+ 127              		.loc 1 140 6 discriminator 1 view .LVU29
  128 0042 C0B9     		cbnz	r0, .L8
- 135:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 129              		.loc 1 135 3 is_stmt 1 view .LVU30
- 135:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 130              		.loc 1 135 31 is_stmt 0 view .LVU31
+ 147:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 129              		.loc 1 147 3 is_stmt 1 view .LVU30
+ 147:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 130              		.loc 1 147 31 is_stmt 0 view .LVU31
  131 0044 0F23     		movs	r3, #15
  132 0046 0593     		str	r3, [sp, #20]
- 137:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 133              		.loc 1 137 3 is_stmt 1 view .LVU32
- 137:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 134              		.loc 1 137 34 is_stmt 0 view .LVU33
+ 149:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 133              		.loc 1 149 3 is_stmt 1 view .LVU32
+ 149:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 134              		.loc 1 149 34 is_stmt 0 view .LVU33
  135 0048 0221     		movs	r1, #2
  136 004a 0691     		str	r1, [sp, #24]
- 138:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 137              		.loc 1 138 3 is_stmt 1 view .LVU34
- 138:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 138              		.loc 1 138 35 is_stmt 0 view .LVU35
+ 150:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 137              		.loc 1 150 3 is_stmt 1 view .LVU34
+ 150:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 138              		.loc 1 150 35 is_stmt 0 view .LVU35
  139 004c 0023     		movs	r3, #0
  140 004e 0793     		str	r3, [sp, #28]
- 139:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 141              		.loc 1 139 3 is_stmt 1 view .LVU36
- 139:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 142              		.loc 1 139 36 is_stmt 0 view .LVU37
+ 151:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 141              		.loc 1 151 3 is_stmt 1 view .LVU36
+ 151:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 142              		.loc 1 151 36 is_stmt 0 view .LVU37
  143 0050 4FF48062 		mov	r2, #1024
  144 0054 0892     		str	r2, [sp, #32]
- 140:Core/Src/main.c **** 
- 145              		.loc 1 140 3 is_stmt 1 view .LVU38
- 140:Core/Src/main.c **** 
- 146              		.loc 1 140 36 is_stmt 0 view .LVU39
+ 152:Core/Src/main.c **** 
+ 145              		.loc 1 152 3 is_stmt 1 view .LVU38
+ 152:Core/Src/main.c **** 
+ 146              		.loc 1 152 36 is_stmt 0 view .LVU39
  147 0056 0993     		str	r3, [sp, #36]
- 142:Core/Src/main.c ****   {
- 148              		.loc 1 142 3 is_stmt 1 view .LVU40
- 142:Core/Src/main.c ****   {
- 149              		.loc 1 142 7 is_stmt 0 view .LVU41
+ 154:Core/Src/main.c ****   {
+ 148              		.loc 1 154 3 is_stmt 1 view .LVU40
+ 154:Core/Src/main.c ****   {
+ 149              		.loc 1 154 7 is_stmt 0 view .LVU41
  150 0058 05A8     		add	r0, sp, #20
  151 005a FFF7FEFF 		bl	HAL_RCC_ClockConfig
  152              	.LVL2:
- 142:Core/Src/main.c ****   {
- 153              		.loc 1 142 6 discriminator 1 view .LVU42
+ 154:Core/Src/main.c ****   {
+ 153              		.loc 1 154 6 discriminator 1 view .LVU42
  154 005e 60B9     		cbnz	r0, .L9
- 146:Core/Src/main.c ****   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
- 155              		.loc 1 146 3 is_stmt 1 view .LVU43
- 146:Core/Src/main.c ****   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
- 156              		.loc 1 146 38 is_stmt 0 view .LVU44
+ 158:Core/Src/main.c ****   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+ 155              		.loc 1 158 3 is_stmt 1 view .LVU43
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 10
+
+
+ 158:Core/Src/main.c ****   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+ 156              		.loc 1 158 38 is_stmt 0 view .LVU44
  157 0060 0223     		movs	r3, #2
  158 0062 0193     		str	r3, [sp, #4]
- 147:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
- 159              		.loc 1 147 3 is_stmt 1 view .LVU45
- 147:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
- 160              		.loc 1 147 35 is_stmt 0 view .LVU46
+ 159:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 159              		.loc 1 159 3 is_stmt 1 view .LVU45
+ 159:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 160              		.loc 1 159 35 is_stmt 0 view .LVU46
  161 0064 4FF40043 		mov	r3, #32768
  162 0068 0393     		str	r3, [sp, #12]
- 148:Core/Src/main.c ****   {
- 163              		.loc 1 148 3 is_stmt 1 view .LVU47
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 10
-
-
- 148:Core/Src/main.c ****   {
- 164              		.loc 1 148 7 is_stmt 0 view .LVU48
+ 160:Core/Src/main.c ****   {
+ 163              		.loc 1 160 3 is_stmt 1 view .LVU47
+ 160:Core/Src/main.c ****   {
+ 164              		.loc 1 160 7 is_stmt 0 view .LVU48
  165 006a 01A8     		add	r0, sp, #4
  166 006c FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
  167              	.LVL3:
- 148:Core/Src/main.c ****   {
- 168              		.loc 1 148 6 discriminator 1 view .LVU49
+ 160:Core/Src/main.c ****   {
+ 168              		.loc 1 160 6 discriminator 1 view .LVU49
  169 0070 28B9     		cbnz	r0, .L10
- 152:Core/Src/main.c **** 
- 170              		.loc 1 152 1 view .LVU50
+ 164:Core/Src/main.c **** 
+ 170              		.loc 1 164 1 view .LVU50
  171 0072 14B0     		add	sp, sp, #80
  172              	.LCFI2:
  173              		.cfi_remember_state
@@ -560,18 +572,18 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
  177              	.L8:
  178              	.LCFI3:
  179              		.cfi_restore_state
- 130:Core/Src/main.c ****   }
- 180              		.loc 1 130 5 is_stmt 1 view .LVU51
+ 142:Core/Src/main.c ****   }
+ 180              		.loc 1 142 5 is_stmt 1 view .LVU51
  181 0076 FFF7FEFF 		bl	Error_Handler
  182              	.LVL4:
  183              	.L9:
- 144:Core/Src/main.c ****   }
- 184              		.loc 1 144 5 view .LVU52
+ 156:Core/Src/main.c ****   }
+ 184              		.loc 1 156 5 view .LVU52
  185 007a FFF7FEFF 		bl	Error_Handler
  186              	.LVL5:
  187              	.L10:
- 150:Core/Src/main.c ****   }
- 188              		.loc 1 150 5 view .LVU53
+ 162:Core/Src/main.c ****   }
+ 188              		.loc 1 162 5 view .LVU53
  189 007e FFF7FEFF 		bl	Error_Handler
  190              	.LVL6:
  191              		.cfi_endproc
@@ -584,8 +596,11 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
  199              		.thumb_func
  201              	main:
  202              	.LFB65:
-  67:Core/Src/main.c **** 
- 203              		.loc 1 67 1 view -0
+  68:Core/Src/main.c **** 
+ 203              		.loc 1 68 1 view -0
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 11
+
+
  204              		.cfi_startproc
  205              		@ Volatile: function does not return.
  206              		@ args = 0, pretend = 0, frame = 0
@@ -595,62 +610,173 @@ ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 1
  210              		.cfi_def_cfa_offset 8
  211              		.cfi_offset 3, -8
  212              		.cfi_offset 14, -4
-  76:Core/Src/main.c **** 
- 213              		.loc 1 76 3 view .LVU55
+  77:Core/Src/main.c **** 
+ 213              		.loc 1 77 3 view .LVU55
  214 0002 FFF7FEFF 		bl	HAL_Init
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 11
-
-
  215              	.LVL7:
-  83:Core/Src/main.c **** 
- 216              		.loc 1 83 3 view .LVU56
+  84:Core/Src/main.c **** 
+ 216              		.loc 1 84 3 view .LVU56
  217 0006 FFF7FEFF 		bl	SystemClock_Config
  218              	.LVL8:
-  90:Core/Src/main.c ****   MX_ADC1_Init();
- 219              		.loc 1 90 3 view .LVU57
+  91:Core/Src/main.c ****   MX_ADC1_Init();
+ 219              		.loc 1 91 3 view .LVU57
  220 000a FFF7FEFF 		bl	MX_GPIO_Init
  221              	.LVL9:
-  91:Core/Src/main.c ****   MX_TIM3_Init();
- 222              		.loc 1 91 3 view .LVU58
+  92:Core/Src/main.c ****   MX_TIM3_Init();
+ 222              		.loc 1 92 3 view .LVU58
  223 000e FFF7FEFF 		bl	MX_ADC1_Init
  224              	.LVL10:
-  92:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 225              		.loc 1 92 3 view .LVU59
+  93:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 225              		.loc 1 93 3 view .LVU59
  226 0012 FFF7FEFF 		bl	MX_TIM3_Init
  227              	.LVL11:
- 228              	.L12:
-  99:Core/Src/main.c ****   {
- 229              		.loc 1 99 3 view .LVU60
- 104:Core/Src/main.c ****   /* USER CODE END 3 */
- 230              		.loc 1 104 3 view .LVU61
-  99:Core/Src/main.c ****   {
- 231              		.loc 1 99 9 view .LVU62
- 232 0016 FEE7     		b	.L12
- 233              		.cfi_endproc
- 234              	.LFE65:
- 236              		.text
- 237              	.Letext0:
- 238              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
- 239              		.file 4 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
- 240              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 241              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
- 242              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
- 243              		.file 8 "Core/Inc/tim.h"
- 244              		.file 9 "Core/Inc/adc.h"
- 245              		.file 10 "Core/Inc/gpio.h"
- 246              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 247              		.file 12 "<built-in>"
-ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s 			page 12
+  95:Core/Src/main.c ****   /* USER CODE END 2 */
+ 228              		.loc 1 95 1 view .LVU60
+ 229 0016 0421     		movs	r1, #4
+ 230 0018 1648     		ldr	r0, .L16
+ 231 001a FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 232              	.LVL12:
+ 233 001e 05E0     		b	.L14
+ 234              	.L13:
+ 113:Core/Src/main.c ****     }
+ 235              		.loc 1 113 7 view .LVU61
+ 236 0020 1548     		ldr	r0, .L16+4
+ 237 0022 FFF7FEFF 		bl	HAL_ADC_Stop
+ 238              	.LVL13:
+ 239              	.L12:
+ 115:Core/Src/main.c ****   }
+ 240              		.loc 1 115 5 view .LVU62
+ 241 0026 1420     		movs	r0, #20
+ 242 0028 FFF7FEFF 		bl	HAL_Delay
+ 243              	.LVL14:
+ 100:Core/Src/main.c ****   {
+ 244              		.loc 1 100 9 view .LVU63
+ 245              	.L14:
+ 100:Core/Src/main.c ****   {
+ 246              		.loc 1 100 3 view .LVU64
+ 105:Core/Src/main.c ****     {
+ 247              		.loc 1 105 5 view .LVU65
+ 105:Core/Src/main.c ****     {
+ 248              		.loc 1 105 8 is_stmt 0 view .LVU66
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 12
+
+
+ 249 002c 1248     		ldr	r0, .L16+4
+ 250 002e FFF7FEFF 		bl	HAL_ADC_Start
+ 251              	.LVL15:
+ 105:Core/Src/main.c ****     {
+ 252              		.loc 1 105 7 discriminator 1 view .LVU67
+ 253 0032 0028     		cmp	r0, #0
+ 254 0034 F7D1     		bne	.L12
+ 107:Core/Src/main.c ****       {
+ 255              		.loc 1 107 7 is_stmt 1 view .LVU68
+ 107:Core/Src/main.c ****       {
+ 256              		.loc 1 107 10 is_stmt 0 view .LVU69
+ 257 0036 0121     		movs	r1, #1
+ 258 0038 0F48     		ldr	r0, .L16+4
+ 259 003a FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 260              	.LVL16:
+ 107:Core/Src/main.c ****       {
+ 261              		.loc 1 107 9 discriminator 1 view .LVU70
+ 262 003e 0028     		cmp	r0, #0
+ 263 0040 EED1     		bne	.L13
+ 109:Core/Src/main.c ****         ccr_val=50U+(uint16_t)((200UL*adc_x)/4095U);
+ 264              		.loc 1 109 9 is_stmt 1 view .LVU71
+ 109:Core/Src/main.c ****         ccr_val=50U+(uint16_t)((200UL*adc_x)/4095U);
+ 265              		.loc 1 109 15 is_stmt 0 view .LVU72
+ 266 0042 0D48     		ldr	r0, .L16+4
+ 267 0044 FFF7FEFF 		bl	HAL_ADC_GetValue
+ 268              	.LVL17:
+ 109:Core/Src/main.c ****         ccr_val=50U+(uint16_t)((200UL*adc_x)/4095U);
+ 269              		.loc 1 109 14 discriminator 1 view .LVU73
+ 270 0048 0C4B     		ldr	r3, .L16+8
+ 271 004a 1880     		strh	r0, [r3]	@ movhi
+ 110:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 272              		.loc 1 110 9 is_stmt 1 view .LVU74
+ 110:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 273              		.loc 1 110 38 is_stmt 0 view .LVU75
+ 274 004c 80B2     		uxth	r0, r0
+ 275 004e C823     		movs	r3, #200
+ 276 0050 03FB00F2 		mul	r2, r3, r0
+ 110:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 277              		.loc 1 110 45 view .LVU76
+ 278 0054 0A4B     		ldr	r3, .L16+12
+ 279 0056 A3FB0213 		umull	r1, r3, r3, r2
+ 280 005a D21A     		subs	r2, r2, r3
+ 281 005c 03EB5203 		add	r3, r3, r2, lsr #1
+ 110:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 282              		.loc 1 110 21 view .LVU77
+ 283 0060 C3F3CF23 		ubfx	r3, r3, #11, #16
+ 110:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 284              		.loc 1 110 20 view .LVU78
+ 285 0064 3233     		adds	r3, r3, #50
+ 286 0066 9BB2     		uxth	r3, r3
+ 110:Core/Src/main.c ****         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+ 287              		.loc 1 110 16 view .LVU79
+ 288 0068 064A     		ldr	r2, .L16+16
+ 289 006a 1380     		strh	r3, [r2]	@ movhi
+ 111:Core/Src/main.c ****       }
+ 290              		.loc 1 111 9 is_stmt 1 view .LVU80
+ 291 006c 014A     		ldr	r2, .L16
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 13
+
+
+ 292 006e 1268     		ldr	r2, [r2]
+ 293 0070 9363     		str	r3, [r2, #56]
+ 294 0072 D5E7     		b	.L13
+ 295              	.L17:
+ 296              		.align	2
+ 297              	.L16:
+ 298 0074 00000000 		.word	htim3
+ 299 0078 00000000 		.word	hadc1
+ 300 007c 00000000 		.word	adc_x
+ 301 0080 01011000 		.word	1048833
+ 302 0084 00000000 		.word	ccr_val
+ 303              		.cfi_endproc
+ 304              	.LFE65:
+ 306              		.global	ccr_val
+ 307              		.section	.bss.ccr_val,"aw",%nobits
+ 308              		.align	1
+ 311              	ccr_val:
+ 312 0000 0000     		.space	2
+ 313              		.global	adc_x
+ 314              		.section	.bss.adc_x,"aw",%nobits
+ 315              		.align	1
+ 318              	adc_x:
+ 319 0000 0000     		.space	2
+ 320              		.text
+ 321              	.Letext0:
+ 322              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 323              		.file 4 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 324              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 325              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 326              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 327              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 328              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 329              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 330              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h"
+ 331              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 332              		.file 13 "Core/Inc/adc.h"
+ 333              		.file 14 "Core/Inc/tim.h"
+ 334              		.file 15 "Core/Inc/gpio.h"
+ 335              		.file 16 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 336              		.file 17 "<built-in>"
+ARM GAS  C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s:19     .text.Error_Handler:00000000 $t
-C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s:25     .text.Error_Handler:00000000 Error_Handler
-C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s:57     .text.SystemClock_Config:00000000 $t
-C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s:63     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s:195    .text.main:00000000 $t
-C:\Users\Lenovo\AppData\Local\Temp\ccD0C3Qa.s:201    .text.main:00000000 main
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:19     .text.Error_Handler:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:25     .text.Error_Handler:00000000 Error_Handler
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:57     .text.SystemClock_Config:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:63     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:195    .text.main:00000000 $t
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:201    .text.main:00000000 main
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:298    .text.main:00000074 $d
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:318    .bss.adc_x:00000000 adc_x
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:311    .bss.ccr_val:00000000 ccr_val
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:308    .bss.ccr_val:00000000 $d
+C:\Users\Lenovo\AppData\Local\Temp\cc71CC4G.s:315    .bss.adc_x:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -661,3 +787,11 @@ HAL_Init
 MX_GPIO_Init
 MX_ADC1_Init
 MX_TIM3_Init
+HAL_TIM_PWM_Start
+HAL_ADC_Stop
+HAL_Delay
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+htim3
+hadc1

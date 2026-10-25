@@ -56,8 +56,8 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint adc_x;
-uint ccr_val;
+uint16_t adc_x;
+uint16_t ccr_val;
 /* USER CODE END 0 */
 
 /**
@@ -93,7 +93,6 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
-HAL_ADC_Start(&hadc1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,25 +102,16 @@ HAL_ADC_Start(&hadc1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    ADC_ChannelConfTypeDef sConfig={0};
-    sConfig.Channel=ADC_CHANNEL_4;
-    sConfig.Rank=ADC_REFULAR_RANK_1;
-    sConfig.SamplingTime=ADC_SAMPLETIME_7CYCLES_5;
-    HAL_ADC_ConfigChannel(&hadc1,&sConfig);
-    HAL_ADC_Start(&hadc1);
-    HAL_ADC_PollForConversion(&hadc1,10);
-    adc_x=HAL_ADC_GetValue(&hadc1);
-    HAL_ADC_Stop(&hadc1);
-    ccr_val=50+(200UL*adc_x)/4095;
-    if(ccr_val<50)
+    if(HAL_ADC_Start(&hadc1)==HAL_OK)
     {
-      ccr_val=50;
+      if(HAL_ADC_PollForConversion(&hadc1,1)==HAL_OK)
+      {
+        adc_x=HAL_ADC_GetValue(&hadc1);
+        ccr_val=50U+(uint16_t)((200UL*adc_x)/4095U);
+        __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
+      }
+      HAL_ADC_Stop(&hadc1);
     }
-    if(ccr_val>250)
-    {
-      ccr_val=250;
-    }
-    __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,ccr_val);
     HAL_Delay(20);
   }
   /* USER CODE END 3 */
